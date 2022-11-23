@@ -13,16 +13,9 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.urls import path, include
+from django.urls import path
 from polls import views
-
-product_patern = [
-    path("", views.products),
-    path("new", views.new),
-    path("top", views.top)
-]
 
 urlpatterns = [
     path("", views.index),
-    path("products/<slug:name>/", include(product_patern))
 ]

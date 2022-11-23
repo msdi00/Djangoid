@@ -1,10 +1,6 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
 
 def index(request):
-    return HttpResponse("<>Главная страница")
-
-
-def products(request, name):
-    return HttpResponse(f"Список товаров {name}")
-
+    langs = ["Python", "JavaScript", "Java", "C#", "C++"]
+    return render(request, "index.html", context={"langs": langs})
