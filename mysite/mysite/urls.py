@@ -14,8 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path
-from polls import views
+from django.views.generic import TemplateView
 
 urlpatterns = [
-    path("", views.index),
+    path("about/", TemplateView.as_view(template_name="about.html")),
+    path("contact/", TemplateView.as_view(template_name="contact.html")),
 ]
