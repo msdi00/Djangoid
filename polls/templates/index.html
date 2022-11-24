@@ -1,13 +1,18 @@
 <!DOCTYPE html>
-{% load static %}
 <html>
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="{% static "css/style.css" %}" />
-    <title>Django on METANIT.COM</title>
+    <title>METANIT.COM</title>
 </head>
 <body>
-    <h1>ТАНК</h1>
-    <img src="{% static "images/Capture001.png" %}" alt="ТАНК" >
+    <table>
+        {{ form }}
+    </table>
+
+    <form method="post" action="postuser/">
+        {% csrf_token %}
+        <h2>User form</h2>
+        <input type="submit" value="Send" />
+    </form>
 </body>
 </html>
